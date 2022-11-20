@@ -1,0 +1,9 @@
+/.idea/
+*.html
+*.iml
+.DS_Store
+target
+builds
+.allure
+allure-results
+log/

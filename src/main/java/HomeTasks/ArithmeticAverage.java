@@ -1,5 +1,7 @@
 package HomeTasks;
 
+/*Создайте класс ArithmeticAverage.
+Вычислите среднее арифметическое трех целочисленных значений и выведите его на экран.*/
 
 import java.util.Scanner;
 

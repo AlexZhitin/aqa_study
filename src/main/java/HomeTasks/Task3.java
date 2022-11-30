@@ -14,7 +14,7 @@ package HomeTasks;
     x = y - x++ * z;*/
 
 
-public class Task_3_Beginner {
+public class Task3 {
     public static void main(String[] args) {
         int x = 10, y = 12, z = 3;
 

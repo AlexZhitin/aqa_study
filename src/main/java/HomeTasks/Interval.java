@@ -10,20 +10,23 @@ package HomeTasks;
 
 import java.util.Scanner;
 
+import static java.lang.String.format;
+
 public class Interval {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите число");
         int num = sc.nextInt();
+        String defaultMessage = "Число попадает в числовой промежуток $s";
 
         if (num >= 0 && num <= 14) {
-            System.out.println("Число попадает в числовой промежуток [0 - 14]");
+            System.out.println(format(defaultMessage, "[0 - 14]"));
         } else if (num >= 15 && num <= 35) {
-            System.out.println("Число попадает в числовой промежуток [15 - 35]");
+            System.out.println(format(defaultMessage, "[15 - 35]"));
         } else if (num >= 36 && num <= 50) {
-            System.out.println("Число попадает в числовой промежуток [36 - 50]");
+            System.out.println(format(defaultMessage, "[36 - 50]"));
         } else if (num >= 51 && num <= 100) {
-            System.out.println("Число попадает в числовой промежуток [50 - 100]");
+            System.out.println(format(defaultMessage, "[50 - 100]"));
         } else {
             System.out.println("Чило не попадает ни в один из промежутков");
         }

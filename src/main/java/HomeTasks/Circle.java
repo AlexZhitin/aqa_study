@@ -7,12 +7,12 @@ package HomeTasks;
 import java.util.Scanner;
 
 public class Circle {
-    public static void main(String[] args){
-        final double pi = 3.14;
+    static final double PI = 3.14;
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите радиус:");
         int r = sc.nextInt();
-        double s = pi *  (Math.pow(r,2));
+        double s = PI * (Math.pow(r, 2));
 
         System.out.println("Площадь круга: " + s);
     }

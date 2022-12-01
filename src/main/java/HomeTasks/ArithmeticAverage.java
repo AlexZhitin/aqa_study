@@ -20,6 +20,6 @@ public class ArithmeticAverage {
 
         double sum = a + b + c;
         double avg = sum / 3;
-        System.out.println(avg);
+        System.out.println("Среднее арифметическое: " + avg);
     }
 }

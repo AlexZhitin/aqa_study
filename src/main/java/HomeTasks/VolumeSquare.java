@@ -9,14 +9,14 @@ import java.util.Scanner;
         Результаты расчетов выведите на экран.*/
 
 public class VolumeSquare {
-    static final double pi = 3.14;
+    static final double PI = 3.14;
 
     static double volume(double r, double h) {
-        return pi * (Math.pow(r, 2)) * h;
+        return PI * (Math.pow(r, 2)) * h;
     }
 
     static double square(double r, double h) {
-        return 2 * pi * r * (h + r);
+        return 2 * PI * r * (h + r);
     }
 
     public static void main(String[] args) {

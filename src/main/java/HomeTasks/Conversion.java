@@ -11,6 +11,14 @@ import java.util.Scanner;
 
 public class Conversion {
 
+    static double buy(double sumBuy, double rate) {
+        return (Double.parseDouble(new DecimalFormat("#.##").format(sumBuy / rate)));
+    }
+
+    static double sell(double sumSell, double rate) {
+        return (Double.parseDouble(new DecimalFormat("#.##").format(sumSell * rate)));
+    }
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -24,12 +32,12 @@ public class Conversion {
             case "1":
                 System.out.println("Введите сумму, на которую хотите купить валюту: ");
                 double sumBuy = sc.nextDouble();
-                System.out.println(Double.parseDouble(new DecimalFormat("#.##").format(sumBuy / rate)));
+                System.out.println(buy(sumBuy, rate));
                 break;
             case "2":
                 System.out.println("Введите сумму валюты, которую хотите продать: ");
                 double sumSell = sc.nextDouble();
-                System.out.println(Double.parseDouble(new DecimalFormat("#.##").format(sumSell * rate)));
+                System.out.println(sell(sumSell, rate));
                 break;
             default:
                 System.out.println("Не выбрана валютная операция)");

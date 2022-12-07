@@ -11,12 +11,10 @@ import java.util.Scanner;
 
 public class Conversion {
 
-    static double buy(double sumBuy, double rate) {
-        return (Double.parseDouble(new DecimalFormat("#.##").format(sumBuy / rate)));
-    }
+    static double calculate(String symbol, double sum, double rate) {
 
-    static double sell(double sumSell, double rate) {
-        return (Double.parseDouble(new DecimalFormat("#.##").format(sumSell * rate)));
+        double result = symbol.equals("1") ? sum / rate : sum * rate;
+        return (Double.parseDouble(new DecimalFormat("#.##").format(result)));
     }
 
     public static void main(String[] args) {
@@ -25,22 +23,12 @@ public class Conversion {
         System.out.println("Введи 1 если нужно купить валюту, 2 - если продать: ");
         String operation = sc.next();
 
+        System.out.println("Введите сумму за которую купить или какую продать");
+        double sum = sc.nextDouble();
+
         System.out.println("Введите курс: ");
         double rate = sc.nextDouble();
 
-        switch (operation) {
-            case "1":
-                System.out.println("Введите сумму, на которую хотите купить валюту: ");
-                double sumBuy = sc.nextDouble();
-                System.out.println(buy(sumBuy, rate));
-                break;
-            case "2":
-                System.out.println("Введите сумму валюты, которую хотите продать: ");
-                double sumSell = sc.nextDouble();
-                System.out.println(sell(sumSell, rate));
-                break;
-            default:
-                System.out.println("Не выбрана валютная операция)");
-        }
+        System.out.println("В итоге получите: " + calculate(operation, sum, rate));
     }
 }

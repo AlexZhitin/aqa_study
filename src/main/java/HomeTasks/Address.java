@@ -6,9 +6,6 @@ package HomeTasks;
 В поля экземпляра записать информацию о почтовом адресе.
 Выведите на экран значения полей, описывающих адрес.*/
 
-import static java.lang.Math.PI;
-import static java.lang.Math.cos;
-
 public class Address {
 
     private int index;
@@ -69,25 +66,22 @@ public class Address {
         this.apartment = apartment;
     }
 
+    @Override
+    public String toString() {
+        return "Index: " + getIndex() + ", " + "Country: " + getCountry() + ", " + "City: " + getCity() + ", " + "Street: " + getStreet() + ", " + "House: " + getHouse() + ", " + "Apartment: " + getApartment();
+    }
 
     public static void main(String[] args) {
+
         Address a = new Address();
         a.setIndex(20200);
-        System.out.println("Index: " + a.getIndex());
-
         a.setCountry("Ukraine");
-        System.out.println("Country: " + a.getCountry());
-
         a.setCity("Kyiv");
-        System.out.println("City: " + a.getCity());
-
         a.setStreet("Shevchenka");
-        System.out.println("Street: " + a.getStreet());
-
         a.setHouse(20);
-        System.out.println("House: " + a.getHouse());
-
         a.setApartment(5);
-        System.out.println("Apartment: " + a.getApartment());
+
+        System.out.println(a);
+
     }
 }

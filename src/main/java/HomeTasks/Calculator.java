@@ -54,15 +54,14 @@ public class Calculator {
                 System.out.print("Результат: " + mul(operand1, operand2));
                 break;
             case "/":
-                double a = div(operand1, operand2);
-                if (a == 0) {
+                if (operand2 == 0) {
                     System.out.println("Нельзя делить на ноль");
                 } else {
-                    System.out.println("Результат: " + a);
+                    System.out.println("Результат: " + div(operand1, operand2));
                 }
                 break;
             default:
-                System.out.println("Looking forward to the Weekend");
+                System.out.println("Операция не поддерживается");
         }
     }
 }

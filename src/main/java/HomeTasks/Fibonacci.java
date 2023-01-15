@@ -15,11 +15,10 @@ public class Fibonacci {
         int[] array = new int[a];
         array[0] = 0;
         array[1] = 1;
-        b = 2;
 
-        while (b < a) {
+        for (b = 2; b < a; b++) {
+
             array[b] = array[b - 1] + array[b - 2];
-            b++;
         }
         System.out.println("Число: " + array[a - 1]);
     }

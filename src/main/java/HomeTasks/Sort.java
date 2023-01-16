@@ -13,15 +13,27 @@ import java.util.Scanner;
 
 public class Sort {
 
-    static void createArray(int[] array, int n) {
+    static int getInputInt() {
+        Scanner sc = new Scanner(System.in);
+        return sc.nextInt();
+    }
+
+    static String getInputString() {
+        Scanner sc = new Scanner(System.in);
+        return sc.nextLine();
+    }
+
+    static int[] createArray(int n) {
         System.out.print("Все числа в массиве: ");
-        for (int i = 0; i < array.length; i++) {
+        int[] array = new int[n];
+        for (int i = 0; i < n; i++) {
             array[i] = (int) ((Math.random() * n));
             System.out.print(array[i] + " ");
         }
+        return array;
     }
 
-    public static void bubbleSort(int[] array) {
+    static int[] bubbleSort(int[] array) {
         int len = array.length;
 
         for (int i = 0; i < len - 1; i++) {
@@ -34,9 +46,10 @@ public class Sort {
                 }
             }
         }
+        return array;
     }
 
-    public static void selectionSort(int[] array) {
+    static int[] selectionSort(int[] array) {
         for (int i = 0; i < array.length - 1; i++) {
             int index = i;
             for (int j = i + 1; j < array.length; j++) {
@@ -48,6 +61,7 @@ public class Sort {
             array[index] = array[i];
             array[i] = smallerNumber;
         }
+        return array;
     }
 
     static int secondMaxNumber(int[] array) {
@@ -56,20 +70,23 @@ public class Sort {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         System.out.println("Введи количество элементов, которое будет в массиве: ");
-        int n = sc.nextInt();
-        int[] array = new int[n];
+        int n = getInputInt();
 
-        System.out.println("Введи 1, если bubble sort, 2 - selection sort: ");
-        int s = sc.nextInt();
+        System.out.println("Введи bubble sort или selection sort");
+        String s = getInputString();
 
-        createArray(array, n);
-        if (s == 1) {
-            bubbleSort(array);
-        } else {
-            selectionSort(array);
+        int[] array = createArray(n);
+
+        switch (s) {
+            case "bubble sort":
+                System.out.println("\n" + "2е самое большое число: " + secondMaxNumber(bubbleSort(array)));
+                break;
+            case "selection sort":
+                System.out.println("\n" + "2е самое большое число: " + secondMaxNumber(selectionSort(array)));
+                break;
+            default:
+                System.out.print("\n" + "Неправильное название сортировки");
         }
-        System.out.println("\n" + "2е самое большое число: " + secondMaxNumber(array));
     }
 }

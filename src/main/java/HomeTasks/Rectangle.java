@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 public class Rectangle {
 
-    double side1;
-    double side2;
+   private double side1;
+   private double side2;
 
     public Rectangle(double side1, double side2) {
         this.side1 = side1;

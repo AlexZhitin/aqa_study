@@ -1,4 +1,4 @@
-package HomeTasks;
+package Basic;
 
 /*Создать класс с именем Address. В теле класса требуется создать поля: index, country, city, street, house, apartment.
 Для каждого поля, создать метод с двумя методами доступа (get, set)

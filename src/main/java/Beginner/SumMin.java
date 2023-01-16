@@ -1,4 +1,4 @@
-package HomeTasks;
+package Beginner;
 
 import java.util.ArrayList;
 import java.util.Scanner;

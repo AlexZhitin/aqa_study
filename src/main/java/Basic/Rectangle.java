@@ -1,4 +1,4 @@
-package HomeTasks;
+package Basic;
 /*Создать класс с именем Rectangle.
 В теле класса создать два поля, описывающие длины сторон double side1, double side2.
 Создать два метода, вычисляющие площадь прямоугольника – double areaCalculator () и периметр прямоугольника – double perimeterCalculator ().

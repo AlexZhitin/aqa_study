@@ -7,19 +7,19 @@ import java.util.Scanner;
 
 public class Fibonacci {
 
+    public static int fibNumber(int n) {
+        if (n <= 1) {
+            return n;
+        }
+
+        return fibNumber(n - 1) + fibNumber(n - 2);
+    }
+
     public static void main(String[] args) {
-        int a, b;
         Scanner sc = new Scanner(System.in);
         System.out.print("Введи индекс n-ого элемента последовательности: ");
-        a = sc.nextInt();
-        int[] array = new int[a];
-        array[0] = 0;
-        array[1] = 1;
+        int n = sc.nextInt();
 
-        for (b = 2; b < a; b++) {
-
-            array[b] = array[b - 1] + array[b - 2];
-        }
-        System.out.println("Число: " + array[a - 1]);
+        System.out.println("Число: " + fibNumber(n - 1));
     }
 }

@@ -17,7 +17,7 @@ public class Fibonacci {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Введи индекс n-ого элемента последовательности: ");
+        System.out.print("Введи какой по счету элемент вернуть: ");
         int n = sc.nextInt();
 
         System.out.println("Число: " + fibNumber(n - 1));

@@ -1,8 +1,6 @@
-package HomeTasks;
+package Beginner;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class SumMin {
@@ -10,8 +8,6 @@ public class SumMin {
 Дано два числа A и B (A<B) выведите суму всех чисел, расположенных между данными числами на экран.
 Дано два числа A и B (A<B) выведите все нечетные значения, расположенные между данными числами.*/
 
-
-    /*чтобы убрать отсюда  System.out.println не догадался ни до чего другого, как возвращать массив*/
     static ArrayList<Integer> odd(int a, int b) {
         ArrayList<Integer> num = new ArrayList<>();
         for (int i = a + 1; i < b; i++) {

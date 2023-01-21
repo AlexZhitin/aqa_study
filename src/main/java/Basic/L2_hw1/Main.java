@@ -1,4 +1,4 @@
-package Basic.Car;
+package Basic.L2_hw1;
 
 public class Main {
 

@@ -8,11 +8,10 @@ public class Main {
         Car car3 = new Car(30, 270, 1999);
         Car car4 = new Car(40, 300, 3000, "white");
 
-        System.out.println("Age: " + car.getAge() + "; Speed: " + car.getSpeed() + "; Weight: " + car.getWeight() + "; Color: " + car.getColor());
-        System.out.println("Age: " + car1.getAge() + "; Speed: " + car1.getSpeed() + "; Weight: " + car1.getWeight() + "; Color: " + car1.getColor());
-        System.out.println("Age: " + car2.getAge() + "; Speed: " + car2.getSpeed() + "; Weight: " + car2.getWeight() + "; Color: " + car2.getColor());
-        System.out.println("Age: " + car3.getAge() + "; Speed: " + car3.getSpeed() + "; Weight: " + car3.getWeight() + "; Color: " + car3.getColor());
-        System.out.println("Age: " + car4.getAge() + "; Speed: " + car4.getSpeed() + "; Weight: " + car4.getWeight() + "; Color: " + car4.getColor());
-
+        System.out.println(car);
+        System.out.println(car1);
+        System.out.println(car2);
+        System.out.println(car3);
+        System.out.println(car4);
     }
 }

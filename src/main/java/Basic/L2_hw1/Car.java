@@ -5,8 +5,10 @@ public class Car {
     private String color;
 
     public Car() {
-        this.age = 5;
-        this.color = "black";
+    }
+
+    public Car(int age) {
+        this.age = age;
     }
 
     public Car(int age, String color) {
@@ -14,23 +16,8 @@ public class Car {
         this.color = color;
     }
 
-    public Car(int age) {
-        this.age = age;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
+    @Override
+    public String toString() {
+        return "Age:" + age + " Color:" + color;
     }
 }

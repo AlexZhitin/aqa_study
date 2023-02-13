@@ -9,32 +9,12 @@ package Basic.L3_hw2;
 Выведите информацию о том, как все ученики экземпляра класса ClassRoom умеют учиться, читать, писать, отдыхать.*/
 
 public class ClassRoom {
-    Pupil pupil;
-    Pupil pupil1;
-    Pupil pupil2;
-    Pupil pupil3;
+
     Pupil[] pupils;
 
-    public ClassRoom(Pupil pupil, Pupil pupil1, Pupil pupil2, Pupil pupil3) {
-        this.pupil = pupil;
-        this.pupil1 = pupil1;
-        this.pupil2 = pupil2;
-        this.pupil3 = pupil3;
-        this.pupils = new Pupil[4];
+    public ClassRoom(Pupil... pupils) {
+        this.pupils = pupils;
 
-        pupils[0] = pupil;
-        pupils[1] = pupil1;
-        pupils[2] = pupil2;
-        pupils[3] = pupil3;
-    }
-
-    public ClassRoom(Pupil pupil, Pupil pupil1) {
-        this.pupil = pupil;
-        this.pupil1 = pupil1;
-        this.pupils = new Pupil[2];
-
-        pupils[0] = pupil;
-        pupils[1] = pupil1;
     }
 
     public static void main(String[] args) {

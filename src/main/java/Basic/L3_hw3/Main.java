@@ -17,29 +17,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        DocumentWorker doc = new DocumentWorker();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите номер ключа pro или exp: ");
+        DocumentWorker doc = DocumentWorker.getVersionObject(sc.nextLine());
         doc.openDocument();
         doc.editDocument();
         doc.saveDocument();
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Введите номер ключа pro или exp: ");
-
-        String key = sc.next();
-
-        switch (key) {
-            case "pro":
-                DocumentWorker doc2 = new ProDocumentWorker();
-                doc2.editDocument();
-                doc2.saveDocument();
-                break;
-            case "exp":
-                DocumentWorker doc3 = new ExpertDocumentWorker();
-                doc3.editDocument();
-                doc3.saveDocument();
-                break;
-            default:
-                System.out.println("Неправильно введён ключ");
-        }
     }
 }

@@ -3,7 +3,7 @@ package Basic.L3_hw3;
 public class ExpertDocumentWorker extends ProDocumentWorker {
 
     @Override
-    void saveDocument() {
+    protected void saveDocument() {
         System.out.println("Документ сохранен в новом формате");
     }
 }

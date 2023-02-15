@@ -16,15 +16,12 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String format = sc.next();
 
+        AbstractHandler handler = new DOCHandler();
+        AbstractHandler doc = handler.getDocObject(format);
 
-        if (format.equals("doc") || format.equals("txt") || format.equals("xml")) {
-            AbstractHandler handler = AbstractHandler.getDocObject(format);
-            handler.save();
-            handler.open();
-            handler.change();
-            handler.create();
-        } else {
-            System.out.println("Неверный формат");
-        }
+        doc.save();
+        doc.open();
+        doc.change();
+        doc.create();
     }
 }

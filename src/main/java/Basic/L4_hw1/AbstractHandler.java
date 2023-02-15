@@ -1,22 +1,51 @@
 package Basic.L4_hw1;
 
+import java.util.InputMismatchException;
+
 public abstract class AbstractHandler {
 
-    abstract void open();
+    protected abstract void open();
 
-    abstract void create();
+    protected abstract void create();
 
-    abstract void change();
+    protected abstract void change();
 
-    abstract void save();
+    protected abstract void save();
 
-    static AbstractHandler getDocObject(String format) {
-        if ("xml".equals(format))
-            return new XMLHandler();
-        else if ("doc".equals(format))
-            return new DOCHandler();
-        else if ("txt".equals(format))
-            return new TXTHandler();
-        else return null;
+    public AbstractHandler getDocObject(String format) {
+
+        switch (format) {
+            case "doc":
+                return new DOCHandler();
+            case "txt":
+                return new TXTHandler();
+            case "xml":
+                return new XMLHandler();
+            default:
+                System.out.println("Wrong doc format");
+                break;
+        }
+
+        return new AbstractHandler() {
+            @Override
+            protected void open() {
+
+            }
+
+            @Override
+            protected void create() {
+
+            }
+
+            @Override
+            protected void change() {
+
+            }
+
+            @Override
+            protected void save() {
+
+            }
+        };
     }
 }

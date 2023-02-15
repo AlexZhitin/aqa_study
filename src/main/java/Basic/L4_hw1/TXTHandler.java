@@ -2,23 +2,23 @@ package Basic.L4_hw1;
 
 public class TXTHandler extends AbstractHandler {
     @Override
-    void open() {
+    protected void open() {
         System.out.println("Open TXT");
 
     }
 
     @Override
-    void create() {
+    protected void create() {
         System.out.println("Create TXT");
     }
 
     @Override
-    void change() {
+    protected void change() {
         System.out.println("Change TXT");
     }
 
     @Override
-    void save() {
+    protected void save() {
         System.out.println("Save TXT");
     }
 }

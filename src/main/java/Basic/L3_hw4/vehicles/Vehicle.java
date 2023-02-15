@@ -2,14 +2,6 @@ package Basic.L3_hw4.vehicles;
 
 public abstract class Vehicle {
 
-    @Override
-    public String toString() {
-        return this.getClass().getSimpleName() +
-                " params: doors=" + doors +
-                ", weight=" + weight +
-                ", color='" + color + '\'';
-    }
-
     protected int doors = 3;
     protected int weight = 9;
     protected String color = "white";
@@ -27,4 +19,12 @@ public abstract class Vehicle {
     }
 
     public abstract void honk();
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() +
+                " params: doors=" + doors +
+                ", weight=" + weight +
+                ", color='" + color + '\'';
+    }
 }

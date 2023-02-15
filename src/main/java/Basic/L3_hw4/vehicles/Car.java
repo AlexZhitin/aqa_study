@@ -5,7 +5,7 @@ public class Car extends Vehicle {
     public Car(int doors, String color) {
         this.doors = doors;
         this.color = color;
-        super.weight = getWeight();
+        this.weight = getWeight();
     }
 
     public void honk() {

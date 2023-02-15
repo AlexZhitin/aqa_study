@@ -4,20 +4,20 @@ public class Tank extends Vehicle {
 
     public Tank(String color) {
         this.color = color;
-        super.doors = getDoors();
-        super.weight = getWeight();
+        this.doors = getDoors();
+        this.weight = getWeight();
     }
 
     public Tank(int doors, String color) {
         this.doors = doors;
         this.color = color;
-        super.weight = getWeight();
+        this.weight = getWeight();
     }
 
     public Tank(int doors, int weight) {
         this.doors = doors;
         this.weight = weight;
-        super.color = getColor();
+        this.color = getColor();
     }
 
     public void honk() {

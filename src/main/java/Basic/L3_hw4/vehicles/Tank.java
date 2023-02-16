@@ -3,21 +3,17 @@ package Basic.L3_hw4.vehicles;
 public class Tank extends Vehicle {
 
     public Tank(String color) {
-        this.color = color;
-        this.doors = getDoors();
-        this.weight = getWeight();
+        super.color = color;
     }
 
     public Tank(int doors, String color) {
-        this.doors = doors;
-        this.color = color;
-        this.weight = getWeight();
+        super.doors = doors;
+        super.color = color;
     }
 
     public Tank(int doors, int weight) {
-        this.doors = doors;
-        this.weight = weight;
-        this.color = getColor();
+        super.doors = doors;
+        super.weight = weight;
     }
 
     public void honk() {

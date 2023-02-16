@@ -2,22 +2,22 @@ package Basic.L3_hw2;
 
 public class ExcellentPupil extends Pupil {
     @Override
-    void study() {
+    protected void study() {
         System.out.println("замечательно учится");
     }
 
     @Override
-    void read() {
+    protected void read() {
         System.out.println("замечательно читает");
     }
 
     @Override
-    void write() {
+    protected void write() {
         System.out.println("замечательно пишет");
     }
 
     @Override
-    void relax() {
+    protected void relax() {
         System.out.println("замечательно отдыхает");
     }
 }

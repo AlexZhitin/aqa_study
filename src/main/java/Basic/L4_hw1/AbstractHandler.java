@@ -1,7 +1,5 @@
 package Basic.L4_hw1;
 
-import java.util.InputMismatchException;
-
 public abstract class AbstractHandler {
 
     protected abstract void open();
@@ -22,30 +20,7 @@ public abstract class AbstractHandler {
             case "xml":
                 return new XMLHandler();
             default:
-                System.out.println("Wrong doc format");
-                break;
+                throw new IllegalArgumentException("Wrong doc format");
         }
-
-        return new AbstractHandler() {
-            @Override
-            protected void open() {
-
-            }
-
-            @Override
-            protected void create() {
-
-            }
-
-            @Override
-            protected void change() {
-
-            }
-
-            @Override
-            protected void save() {
-
-            }
-        };
     }
 }

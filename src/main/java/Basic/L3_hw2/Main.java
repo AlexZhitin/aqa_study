@@ -8,26 +8,17 @@ package Basic.L3_hw2;
 Предусмотрите возможность того, что пользователь может передать 2 или 3 аргумента.
 Выведите информацию о том, как все ученики экземпляра класса ClassRoom умеют учиться, читать, писать, отдыхать.*/
 
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
-
-       /* ArrayList<Pupil> pupils = new ArrayList<>();
-        pupils.add(new Pupil());
-        pupils.add(new BadPupil());
-        pupils.add(new GoodPupil());
-        pupils.add(new ExcellentPupil());*/
 
         Pupil pupil = new Pupil();
         Pupil pupil1 = new BadPupil();
         Pupil pupil2 = new GoodPupil();
         Pupil pupil3 = new ExcellentPupil();
 
+        ClassRoom a = new ClassRoom();
 
-        ClassRoom a = new ClassRoom(pupil, pupil1, pupil2, pupil3);
-
-        for (Pupil i : a.pupils) {
+        for (Pupil i : a.getPupils(pupil, pupil1, pupil2, pupil3)) {
             i.read();
             i.write();
             i.study();

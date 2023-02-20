@@ -13,13 +13,19 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        ArrayList<Pupil> pupils = new ArrayList<>();
+       /* ArrayList<Pupil> pupils = new ArrayList<>();
         pupils.add(new Pupil());
         pupils.add(new BadPupil());
         pupils.add(new GoodPupil());
-        pupils.add(new ExcellentPupil());
+        pupils.add(new ExcellentPupil());*/
 
-        ClassRoom a = new ClassRoom(pupils);
+        Pupil pupil = new Pupil();
+        Pupil pupil1 = new BadPupil();
+        Pupil pupil2 = new GoodPupil();
+        Pupil pupil3 = new ExcellentPupil();
+
+
+        ClassRoom a = new ClassRoom(pupil, pupil1, pupil2, pupil3);
 
         for (Pupil i : a.pupils) {
             i.read();

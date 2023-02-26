@@ -1,9 +1,5 @@
 package Basic.L4_hw2;
 
-public interface Playable {
+public interface Playable extends CommonPlayer {
     void play();
-
-    void pause();
-
-    void stop();
 }

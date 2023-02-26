@@ -7,16 +7,27 @@ package Basic.L4_hw2;
 public class Main {
     public static void main(String[] args) {
 
-        Playable play = new Player();
+        Player1 p1 = new Player1();
+        p1.play();
+        p1.record();
+        p1.pause();
+        p1.stop();
 
-        play.play();
-        play.pause();
-        play.stop();
+        System.out.println("____________________________");
 
-        Recordable record = new Player();
+        Player2 p2 = new Player2();
+        p2.play();
+        p2.record();
+        p2.pause();
+        p2.stop();
 
-        record.record();
-        record.pause();
-        record.stop();
+        System.out.println("____________________________");
+
+
+        Player3 p3 = new Player3();
+        p3.play();
+        p3.record();
+        p3.pause();
+        p3.stop();
     }
 }

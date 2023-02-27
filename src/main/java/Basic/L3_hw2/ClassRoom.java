@@ -5,7 +5,13 @@ import java.util.Arrays;
 
 public class ClassRoom {
 
-    public ArrayList<Pupil> getPupils(Pupil... pupils) {
-        return new ArrayList<>(Arrays.asList(pupils));
+   private ArrayList<Pupil> pupils;
+
+    public ClassRoom(Pupil... pupils) {
+       this.pupils = new ArrayList<>(Arrays.asList(pupils));
+    }
+
+    public ArrayList<Pupil> getPupils() {
+        return pupils;
     }
 }

@@ -16,13 +16,20 @@ public class Main {
         Pupil pupil2 = new GoodPupil();
         Pupil pupil3 = new ExcellentPupil();
 
-        ClassRoom a = new ClassRoom();
+        ClassRoom a = new ClassRoom(pupil, pupil1, pupil2, pupil3);
+        ClassRoom b = new ClassRoom(pupil, pupil1);
 
-        for (Pupil i : a.getPupils(pupil, pupil1, pupil2, pupil3)) {
+        for (Pupil i : a.getPupils()) {
             i.read();
             i.write();
             i.study();
             i.relax();
         }
+        b.getPupils().stream().forEach(i -> {
+            i.read();
+            i.write();
+            i.study();
+            i.relax();
+        });
     }
 }

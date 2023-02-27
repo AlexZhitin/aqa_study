@@ -16,7 +16,6 @@ public class Main {
         System.out.println("____________________________");
 
         Player2 p2 = new Player2();
-        p2.play();
         p2.record();
         p2.pause();
         p2.stop();
@@ -26,7 +25,6 @@ public class Main {
 
         Player3 p3 = new Player3();
         p3.play();
-        p3.record();
         p3.pause();
         p3.stop();
     }

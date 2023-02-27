@@ -1,11 +1,7 @@
 package Basic.L4_hw2;
 
-public class Player2 extends Player1 implements Playable {
+public class Player2 implements Recordable {
 
-    @Override
-    public void play() {
-        System.out.println("Проигрывание в Player2");
-    }
 
     @Override
     public void pause() {

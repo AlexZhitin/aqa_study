@@ -11,9 +11,9 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         Zoo zoo1 = new Zoo(new ArrayList<>());
-        zoo1.addAnimal("Elephant", "Mammal");
-        zoo1.addAnimal("Giraffe", "Mammal");
-        zoo1.addAnimal("Lion", "Mammal");
+        zoo1.addAnimal("Alex", "Elephant");
+        zoo1.addAnimal("Jeff", "Giraffe");
+        zoo1.addAnimal("Ted", "Lion");
 
         System.out.println("__________________________________________________");
         zoo1.printAnimals();

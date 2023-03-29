@@ -2,6 +2,7 @@ package Basic.L5_hw1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.TreeMap;
 
 public class Zoo {
     private final ArrayList<Animal> animals;
@@ -27,5 +28,17 @@ public class Zoo {
         for (Animal animal : animals) {
             System.out.println(animal.getName() + " - " + animal.getType());
         }
+    }
+
+    public ArrayList<Animal> getAnimals() {
+        return animals;
+    }
+
+    TreeMap<String, String> treeMapAnimals() {
+        TreeMap<String, String> allAnimals = new TreeMap<>();
+        for (Animal a : getAnimals()) {
+            allAnimals.put(a.getType(), a.getName());
+        }
+        return allAnimals;
     }
 }

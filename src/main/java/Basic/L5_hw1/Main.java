@@ -7,30 +7,36 @@ Cоздать класс Zoo. В классе создать конструкт�
 Создать метод который выводит отсортированый список животных в формате {type, name}*/
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
         Zoo zoo1 = new Zoo(new ArrayList<>());
-        zoo1.addAnimal("Alex", "Elephant");
+        zoo1.addAnimal("Alex", "Lion");
         zoo1.addAnimal("Jeff", "Giraffe");
-        zoo1.addAnimal("Ted", "Lion");
+        zoo1.addAnimal("Ted", "Elephant");
 
-        System.out.println("__________________________________________________");
         zoo1.printAnimals();
 
-        System.out.println("___");
+        System.out.println("___________");
 
-        zoo1.deleteAnimal("Lion");
+        System.out.println("Sorted in TreeMap:");
+        for (Map.Entry<String, String> animalEntry : zoo1.treeMapAnimals().entrySet()) {
+            System.out.println(animalEntry.getKey() + ", " + animalEntry.getValue());
+        }
+
+        System.out.println("___________After deletion by name:");
+        zoo1.deleteAnimal("Ted");
         zoo1.printAnimals();
 
         System.out.println("__________________________________________________");
 
-        Zoo zoo2 = new Zoo(new Animal("Mark", "Stork"), new Animal("Zhora", "Beaver"), new Animal("Pedro", "Dog"));
-        zoo2.printAnimals();
+        Zoo zoo2 = new Zoo(new Animal("Mark", "Stork"), new Animal("Zhora", "Beaver"), new Animal("Pedro", "Dog"), new Animal("Ann", "Ape"));
 
-        System.out.println("___");
-
-        zoo2.deleteAnimal("Pedro");
-        zoo2.printAnimals();
+        System.out.println("Sorted by type with comparator");
+        zoo2.getAnimals().sort(new ComparatorByType());
+        for (Animal tmp : zoo2.getAnimals()) {
+            System.out.println(tmp);
+        }
     }
 }

@@ -25,50 +25,41 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         String fileLocation = "/Users/o.zhytin/Projects/aqa_study/src/main/java/Basic/L6_hw1/JavaHistory.rtf";
-        FileReader reader = new FileReader();
-
-        long countWords = reader.getText(fileLocation)
-                .flatMap(line -> Stream.of(line.split("([.,!?:;'\"-]|\\s)+")))
-                .filter(x -> !x.matches("\\p{Punct}|\\d+"))
-                .count();
-        System.out.println("Count of words: " + countWords);
+        FileReader reader = new FileReader(fileLocation);
 
 
-        List<String> list = reader.getText(fileLocation)
-                .flatMap(line -> Stream.of(line.split("([.,!?:;'\"-]|\\s)+")))
-                .filter(x -> x.toLowerCase().startsWith("c"))
-                .collect(Collectors.toList());
-
-        list.forEach(System.out::println);
-        System.out.println("Count of words starting with \"C\": " + list.size());
+        System.out.println(reader.countWords(new FileReader(fileLocation)));
 
 
 
-        List<String> list2 = reader.getText(fileLocation)
-                .flatMap(line -> Stream.of(line.split("\\p{Punct}|\\w")))
-                .filter(x -> x.contains(" "))
-                .collect(Collectors.toList());
-
-        System.out.println(list2.size());
 
 
 
-    /*    List<String> list = words
-                .map(s -> s.replaceAll("[^a-zA-Z ]", ""))
-                .collect(Collectors.toList());
+// Do not remove
+//        long countWords = reader.getText(fileLocation)
+//                .flatMap(line -> Stream.of(line.split("([.,!?:;'\"-]|\\s)+")))
+//                .filter(x -> !x.matches("\\p{Punct}|\\d+"))
+//                .count();
+//        System.out.println("Count of words: " + countWords);
+
+// Do not remove
+//        List<String> list = reader.getText(fileLocation)
+//                .flatMap(line -> Stream.of(line.split("([.,!?:;'\"-]|\\s)+")))
+//                .filter(x -> x.toLowerCase().startsWith("c"))
+//                .collect(Collectors.toList());
+//
+//        list.forEach(System.out::println);
+//        System.out.println("Count of words starting with \"C\": " + list.size());
 
 
-        list.forEach(System.out::print);
-*/
+// Do not remove
+//       List<String> list2 = reader.getText(fileLocation)
+//                .flatMap(line -> Stream.of(line.split("\\p{Punct}|\\w")))
+//                .filter(x -> x.contains(" "))
+//                .collect(Collectors.toList());
+//
+//        System.out.println(list2.size());
 
-
-        /*Stream<String> stream = reader.getText(fileLocation);
-        List<String> list = stream
-                .map(s -> s.replaceAll("[^a-zA-Z ]", ""))
-                .collect(Collectors.toList());
-
-
-        list.forEach(System.out::println);*/
 
     }
 }

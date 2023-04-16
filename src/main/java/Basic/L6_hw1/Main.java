@@ -8,8 +8,8 @@ package Basic.L6_hw1;
 - Количество пробелов
 - Вывести всего 12 слов
 - Отсортировать 12 слов
-- Найти любое слово
-- Найти первое слово
+- Найти любое слово (тут надо  try...)
+- Найти первое слово (тут надо  try...)
 - Нйти последнее слово
 - Вывести все цифры
 - Узнать содержится ли 2006 год в тексте
@@ -17,21 +17,20 @@ package Basic.L6_hw1;
 * */
 
 import java.io.IOException;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        String fileLocation = "/Users/o.zhytin/Projects/aqa_study/src/main/java/Basic/L6_hw1/JavaHistory.rtf";
-        FileReader reader = new FileReader(fileLocation);
 
+        FileReader reader = new FileReader();
 
-        System.out.println(reader.countWords(new FileReader(fileLocation)));
-
-
-
+        System.out.println(reader.countWords());
+        System.out.println("Count of words starting with \"c\": " + reader.wordsStartWithLetter("c").size());
+        reader.wordsStartWithLetter("c").forEach(System.out::println);
+        System.out.println("Count of spaces: " + reader.countSpaces().size());
+        reader.printGivenNumberOfWords(12).forEach(System.out::println);
+        reader.printGivenNumberOfWordsSorted(12).forEach(System.out::println);
 
 
 
@@ -59,7 +58,5 @@ public class Main {
 //                .collect(Collectors.toList());
 //
 //        System.out.println(list2.size());
-
-
     }
 }

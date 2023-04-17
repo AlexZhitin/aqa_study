@@ -8,8 +8,8 @@ package Basic.L6_hw1;
 - Количество пробелов
 - Вывести всего 12 слов
 - Отсортировать 12 слов
-- Найти любое слово (тут надо  try...)
-- Найти первое слово (тут надо  try...)
+- Найти любое слово
+- Найти первое слово
 - Нйти последнее слово
 - Вывести все цифры
 - Узнать содержится ли 2006 год в тексте
@@ -18,7 +18,6 @@ package Basic.L6_hw1;
 
 import java.io.IOException;
 
-
 public class Main {
 
     public static void main(String[] args) throws IOException {
@@ -26,37 +25,16 @@ public class Main {
         FileReader reader = new FileReader();
 
         System.out.println(reader.countWords());
-        System.out.println("Count of words starting with \"c\": " + reader.wordsStartWithLetter("c").size());
+        System.out.println("Count of words starting with \"c\": " + reader.wordsStartWithLetterCount("c"));
         reader.wordsStartWithLetter("c").forEach(System.out::println);
-        System.out.println("Count of spaces: " + reader.countSpaces().size());
+        System.out.println("Count of spaces: " + reader.countSpaces());
         reader.printGivenNumberOfWords(12).forEach(System.out::println);
         reader.printGivenNumberOfWordsSorted(12).forEach(System.out::println);
-
-
-
-// Do not remove
-//        long countWords = reader.getText(fileLocation)
-//                .flatMap(line -> Stream.of(line.split("([.,!?:;'\"-]|\\s)+")))
-//                .filter(x -> !x.matches("\\p{Punct}|\\d+"))
-//                .count();
-//        System.out.println("Count of words: " + countWords);
-
-// Do not remove
-//        List<String> list = reader.getText(fileLocation)
-//                .flatMap(line -> Stream.of(line.split("([.,!?:;'\"-]|\\s)+")))
-//                .filter(x -> x.toLowerCase().startsWith("c"))
-//                .collect(Collectors.toList());
-//
-//        list.forEach(System.out::println);
-//        System.out.println("Count of words starting with \"C\": " + list.size());
-
-
-// Do not remove
-//       List<String> list2 = reader.getText(fileLocation)
-//                .flatMap(line -> Stream.of(line.split("\\p{Punct}|\\w")))
-//                .filter(x -> x.contains(" "))
-//                .collect(Collectors.toList());
-//
-//        System.out.println(list2.size());
+        System.out.println(reader.findAnyWord());
+        System.out.println(reader.findFirstWord());
+        System.out.println(reader.findLastWord());
+        reader.printAllNumbers().forEach(System.out::println);
+        System.out.println(reader.findWordInText("2006"));
+        reader.printGivenNumberOfDistinctWords(30).forEach(System.out::println);
     }
 }

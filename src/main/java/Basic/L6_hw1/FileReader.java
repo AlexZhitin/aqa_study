@@ -6,6 +6,7 @@ import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -60,7 +61,7 @@ public class FileReader {
 
     List<String> printGivenNumberOfWordsSorted(int number) throws IOException {
         return printGivenNumberOfWords(number)
-                .stream().sorted(Comparator.comparing(s -> s.toLowerCase()))
+                .stream().sorted(Comparator.comparing(String::toLowerCase))
                 .collect(Collectors.toList());
     }
 
@@ -68,14 +69,16 @@ public class FileReader {
         return getText(getFileLocation())
                 .flatMap(line -> Stream.of(line.split("([.,!?:;'\"-]|\\s)+")))
                 .filter(x -> !x.matches("\\p{Punct}|\\d+|\\s"))
-                .findAny().orElse("Nothing found");
+                .findAny()
+                .orElseThrow(() -> new IllegalArgumentException("Nothing found"));
     }
 
     String findFirstWord() throws IOException {
         return getText(getFileLocation())
                 .flatMap(line -> Stream.of(line.split("([.,!?:;'\"-]|\\s)+")))
                 .filter(x -> !x.matches("\\p{Punct}|\\d+|\\s"))
-                .findFirst().orElse("Nothing found");
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Nothing found"));
     }
 
     String findLastWord() throws IOException {
@@ -83,7 +86,7 @@ public class FileReader {
                 .flatMap(line -> Stream.of(line.split("([.,!?:;'\"-]|\\s)+")))
                 .filter(x -> !x.matches("\\p{Punct}|\\d+|\\s"))
                 .reduce((first, second) -> second)
-                .orElse(null);
+                .orElseThrow(() -> new IllegalArgumentException("Nothing found"));
     }
 
     List<String> printAllNumbers() throws IOException {
@@ -106,9 +109,8 @@ public class FileReader {
                 .collect(Collectors.collectingAndThen(Collectors.toList(),
                         collected -> {
                             Collections.shuffle(collected);
-                            return collected.stream().distinct();
-                        }))
-                .limit(number)
+                            return collected.stream();
+                        })).distinct().limit(number)
                 .collect(Collectors.toList());
     }
 }

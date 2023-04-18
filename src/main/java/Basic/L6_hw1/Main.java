@@ -24,17 +24,17 @@ public class Main {
 
         FileReader reader = new FileReader();
 
-        System.out.println(reader.countWords());
-        System.out.println("Count of words starting with \"c\": " + reader.wordsStartWithLetterCount("c"));
-        reader.wordsStartWithLetter("c").forEach(System.out::println);
-        System.out.println("Count of spaces: " + reader.countSpaces());
-        reader.printGivenNumberOfWords(12).forEach(System.out::println);
-        reader.printGivenNumberOfWordsSorted(12).forEach(System.out::println);
-        System.out.println(reader.findAnyWord());
-        System.out.println(reader.findFirstWord());
-        System.out.println(reader.findLastWord());
-        reader.printAllNumbers().forEach(System.out::println);
-        System.out.println(reader.findWordInText("2006"));
-        reader.printGivenNumberOfDistinctWords(30).forEach(System.out::println);
+//        System.out.println(reader.countWords());
+//        System.out.println("Count of words starting with \"c\": " + reader.wordsStartWithLetterCount("c"));
+//        reader.wordsStartWithLetter("c").forEach(System.out::println);
+//        System.out.println("Count of spaces: " + reader.countSpaces());
+//        reader.printGivenNumberOfWords(12).forEach(System.out::println);
+//        reader.printGivenNumberOfWordsSorted(12).forEach(System.out::println);
+//        System.out.println(reader.findAnyWord());
+//        System.out.println(reader.findFirstWord());
+//        System.out.println(reader.findLastWord());
+//        reader.printAllNumbers().forEach(System.out::println);
+//        System.out.println(reader.findWordInText("2006"));
+        reader.printGivenNumberOfDistinctWords(10).forEach(System.out::println);
     }
 }

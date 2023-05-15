@@ -17,7 +17,8 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Store store = new Store(new ArrayList<>());
-        store.addProducts(2);
+        Store store = new Store(1);
+        store.getPricesByStore().forEach((priceProduct, pricePrice) -> System.out.println("Product name: " + priceProduct + ", Product price: " + pricePrice));
+
     }
 }

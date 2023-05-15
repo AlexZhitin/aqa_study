@@ -1,19 +1,19 @@
 package Basic.L7_hw1;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Store {
 
-    private final List<Price> products;
+    private final List<Price> products = new ArrayList<>();
+    private final int number;
 
-    public Store(List<Price> products) {
-        this.products = products;
+    public Store(int number) {
+        this.number = number;
+        addProducts();
     }
 
-    protected List<Price> addProducts(int number) {
+    protected void addProducts() {
         for (int i = 0; i < number; i++) {
             System.out.println("Введите название продукта: ");
             Scanner sc = new Scanner(System.in);
@@ -28,7 +28,33 @@ public class Store {
             Price newProduct = new Price(product, store, price);
             products.add(newProduct);
         }
-        return products.stream().sorted(Comparator.comparing(Price::getStore)).
-                collect(Collectors.toList());
     }
+
+    protected List<Price> getPrices() {
+        return products.stream().sorted(Comparator.comparing(Price::getStore))
+                .collect(Collectors.toList());
+    }
+
+    protected Map<String, Integer> getPricesByStore() {
+        System.out.println("Введите название магазина для поиска товаров: ");
+        Scanner sc = new Scanner(System.in);
+        String store = sc.next();
+
+        return getPrices().stream()
+                .filter(s -> s.getStore().equals(store))
+                .collect(
+                        Collectors.toMap(Price::getProduct, Price::getPrice));
+    }
+
 }
+
+
+
+//try {
+//            return getPrices().stream()
+//                    .filter(s -> s.getStore().equals(store))
+//                    .collect(
+//                            Collectors.toMap(Price::getProduct, Price::getPrice));
+//        } catch (Exception e) {
+//            throw new Exception();
+//        }

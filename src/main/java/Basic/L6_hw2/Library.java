@@ -8,13 +8,15 @@ import java.util.stream.Collectors;
 public class Library {
 
     Faker faker = new Faker();
-    private final ArrayList<Book> books;
+    private final ArrayList<Book> books = new ArrayList<>();
+    private final int number;
 
-    protected Library(ArrayList<Book> books) {
-        this.books = books;
+    protected Library(int number) {
+        this.number = number;
+        addBooks();
     }
 
-    protected void addBooks(int number) {
+    private void addBooks() {
         for (int i = 0; i < number; i++) {
             String name = faker.book().title();
             String writer = faker.book().author();
@@ -23,7 +25,7 @@ public class Library {
         }
     }
 
-    protected Map<String, String> booksToMap() {
+    protected Map<String, String> getLibrary() {
         return books.stream().collect(
                 Collectors.toMap(Book::getName, Book::getWriter));
     }

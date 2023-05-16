@@ -39,22 +39,13 @@ public class Store {
         System.out.println("Введите название магазина для поиска товаров: ");
         Scanner sc = new Scanner(System.in);
         String store = sc.next();
-
-        return getPrices().stream()
+        Map<String, Integer> map = getPrices().stream()
                 .filter(s -> s.getStore().equals(store))
                 .collect(
                         Collectors.toMap(Price::getProduct, Price::getPrice));
+        if (map.isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        return map;
     }
-
 }
-
-
-
-//try {
-//            return getPrices().stream()
-//                    .filter(s -> s.getStore().equals(store))
-//                    .collect(
-//                            Collectors.toMap(Price::getProduct, Price::getPrice));
-//        } catch (Exception e) {
-//            throw new Exception();
-//        }
